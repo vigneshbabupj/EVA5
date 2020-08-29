@@ -25,7 +25,7 @@ Run code with below version of network and report findings
 
 The below is the comparison of Validation Accuracy:
 
-
+![image](https://user-images.githubusercontent.com/48342398/91642910-bf880d00-ea4c-11ea-8a3d-05c611100275.png)
 
 
 The below is the comparison of Validation Loss:
