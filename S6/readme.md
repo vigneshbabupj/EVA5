@@ -30,7 +30,7 @@ The below is the comparison of Validation Accuracy:
 
 The below is the comparison of Validation Loss:
 
-
+![image](https://user-images.githubusercontent.com/48342398/91642942-ef371500-ea4c-11ea-8ec3-7d2d08ffcf2b.png)
 
 25 misclassified Images of GBN:
 
