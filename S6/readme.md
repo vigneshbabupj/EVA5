@@ -34,4 +34,5 @@ The below is the comparison of Validation Loss:
 
 25 misclassified Images of GBN:
 
+![image](https://user-images.githubusercontent.com/48342398/91642995-37eece00-ea4d-11ea-83ce-dd7ae5996ebb.png)
 
