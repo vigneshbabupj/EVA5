@@ -15,7 +15,8 @@ Change the given network as per the below instructions
 * achieve 80% accuracy, as many epochs as you want. Total Params to be less than 1M. 
 
 # Model Architecture
- ** Inset image
+
+![image](https://user-images.githubusercontent.com/48342398/92998408-481ba880-f537-11ea-907a-2b79293d32ae.png)
 
 
 
