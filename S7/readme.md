@@ -30,3 +30,15 @@ Change the given network as per the below instructions
 * Parameters: 975,296
 * Train Accuracy - 95.5%
 * Test Accuracy - 83.8%
+
+# Class wise accuracy
+* Accuracy of plane : 96 %
+* Accuracy of   car : 93 %
+* Accuracy of  bird : 73 %
+* Accuracy of   cat : 56 %
+* Accuracy of  deer : 88 %
+* Accuracy of   dog : 62 %
+* Accuracy of  frog : 90 %
+* Accuracy of horse : 96 %
+* Accuracy of  ship : 92 %
+* Accuracy of truck : 96 %
