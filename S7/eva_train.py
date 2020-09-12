@@ -15,8 +15,8 @@ from torchsummary import summary
 import torch.nn.functional as F
 import torch.optim as optim
 
-import import_ipynb
-import EVA_Regularization as rg
+#import import_ipynb
+import eva_Regularization as rg
 
 def train(model, device, train_loader, optimizer, lambda_l1,criterion):
   model.train()
