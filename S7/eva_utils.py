@@ -55,7 +55,7 @@ def incorrect_images(model, device, test_loader):
       idxs_mask = (pred.eq(target.data.view_as(pred))==False).nonzero() ## store incorrect images
 
       for id in idxs_mask:
-        incorrect_examples.append(data[id[0].item()][0])
+        incorrect_examples.append(data[id[0].item()])
         incorrect_target.append(target[id[0].item()].item())
         incorrect_pred.append(pred[id[0].item()].item())
 
