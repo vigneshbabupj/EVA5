@@ -62,7 +62,8 @@ def CIFAR10_dataloader(Batch_size, use_cuda):
                                         #  transforms.Resize((28, 28)),
                                         #  transforms.ColorJitter(brightness=0.10, contrast=0.1, saturation=0.10, hue=0.1),
                                         # transforms.RandomRotation((-7.0, 7.0), fill=(1,)),
-                                        transforms.RandomHorizontalFlip(p=0.5),
+                                        transforms.RandomCrop(32, padding=4),
+                                        transforms.RandomHorizontalFlip(),
                                         transforms.ToTensor(),
                                         transforms.Normalize((0.4890062, 0.47970363, 0.47680542), (0.264582, 0.258996, 0.25643882)) 
                                         ])
