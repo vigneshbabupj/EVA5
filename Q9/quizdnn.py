@@ -124,9 +124,9 @@ class quizdnn(nn.Module):
     def forward(self,x):
           x1 = x
           x11 = self.Tran1(x)
-          print(x11.shape)
+          #print(x11.shape)
           x2 = self.Conv1(x1)
-          print(x2.shape)
+          #print(x2.shape)
           x3 = self.Conv2(x11 + x2)
           x4 = self.Pool1(x11 + x2 + x3)
           x44 = self.Tran2(x4)
