@@ -7,13 +7,11 @@ Original file is located at
     https://colab.research.google.com/drive/1Fj6T8HLiPowkwDvzeVKmf1mHdXA74AWe
 """
 
-from tqdm import tqdm
 import torch 
-import torch.nn as nn
 from torchvision import datasets, transforms
-from torchsummary import summary
-import torch.nn.functional as F
-import torch.optim as optim
+
+import albumentations as A
+from albumentations.pytorch import ToTensorV2
 
 def MNIST_dataloader(Batch_size, use_cuda):
 
@@ -57,27 +55,54 @@ def MNIST_dataloader(Batch_size, use_cuda):
 
 def CIFAR10_dataloader(Batch_size, use_cuda):
 
-  # Train Phase transformations
-  train_transforms = transforms.Compose([
-                                        #  transforms.Resize((28, 28)),
-                                        #  transforms.ColorJitter(brightness=0.10, contrast=0.1, saturation=0.10, hue=0.1),
-                                        # transforms.RandomRotation((-7.0, 7.0), fill=(1,)),
-                                        transforms.RandomCrop(32, padding=4),
-                                        transforms.RandomHorizontalFlip(),
-                                        transforms.ToTensor(),
-                                        transforms.Normalize((0.4890062, 0.47970363, 0.47680542), (0.264582, 0.258996, 0.25643882)) 
-                                        ])
+# # Train Phase transformations Torchvison
+# train_transforms = transforms.Compose([
+#                                       #  transforms.Resize((28, 28)),
+#                                       #  transforms.ColorJitter(brightness=0.10, contrast=0.1, saturation=0.10, hue=0.1),
+#                                       # transforms.RandomRotation((-7.0, 7.0), fill=(1,)),
+#                                       A.HorizontalFlip(p=0.5),
+#                                       A.RandomRotate90()
+#                                       transforms.ToTensor(),
+#                                       transforms.Normalize((0.4890062, 0.47970363, 0.47680542), (0.264582, 0.258996, 0.25643882)) 
+#                                       ])
 
-  # Test Phase transformations
-  test_transforms = transforms.Compose([
-                                        #  transforms.Resize((28, 28)),
-                                        #  transforms.ColorJitter(brightness=0.10, contrast=0.1, saturation=0.10, hue=0.1),
-                                        transforms.ToTensor(),
-                                        transforms.Normalize((0.4890062, 0.47970363, 0.47680542), (0.264582, 0.258996, 0.25643882))
-                                        ])
+# Train Phase transformations Albumentations
+train_transforms = A.Compose([
+                              A.HorizontalFlip(),
+                              A.Normalize(
+                                  mean=[0.4890062, 0.47970363, 0.47680542],
+                                  std=[0.264582, 0.258996, 0.25643882],
+                                  ),
+                              A.Cutout ( num_holes=1, max_h_size=16, max_w_size=16,  fill_value=[0.4890062, 0.47970363, 0.47680542], always_apply=False, p=0.5),
+                              ToTensorV2()
+                              ])
 
 
-  #Get the MNIST dataset
+
+
+
+
+# # Test Phase transformations Torchvision
+# test_transforms = transforms.Compose([
+#                                       #  transforms.Resize((28, 28)),
+#                                       #  transforms.ColorJitter(brightness=0.10, contrast=0.1, saturation=0.10, hue=0.1),
+#                                       transforms.ToTensor(),
+#                                       transforms.Normalize((0.4890062, 0.47970363, 0.47680542), (0.264582, 0.258996, 0.25643882))
+#                                       ])
+
+
+# Test Phase transformations Albumentations
+test_transforms = A.Compose([
+
+                              A.Normalize(
+                                  mean=[0.4890062, 0.47970363, 0.47680542],
+                                  std=[0.264582, 0.258996, 0.25643882],
+                                  ),
+                              ToTensorV2()
+                              ])
+
+
+  #Get the CIFAR10 dataset
 
   train_dataset =  datasets.CIFAR10('/data/', train=True, download=True,
                               transform=train_transforms)
