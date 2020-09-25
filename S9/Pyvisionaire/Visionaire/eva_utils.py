@@ -14,7 +14,7 @@ import torchvision
 from torchsummary import summary
 import torch.nn.functional as F
 import torch.optim as optim
-# %matplotlib inline
+#%matplotlib inline
 import matplotlib.pyplot as plt
 
 
@@ -66,27 +66,74 @@ def incorrect_images(model, device, test_loader):
   return incorrect
 
 
-  # test_loss /= len(test_loader.dataset)
-  # test_losses.append(test_loss)
-
-  # print('\nTest set: loss: {:.6f}, Accuracy: {}/{} ({:.3f}%)\n'.format(
-  #   test_loss, correct, len(test_loader.dataset),
-  #   100. * correct / len(test_loader.dataset)))
-
-  # test_acc.append(100. * correct / len(test_loader.dataset))
 
 
+def incorrect_Classification(model,classes test_loader,device, savefig = False, *save_dir):
 
 
-  # fig = plt.figure()
+  incorrect = incorrect_images(model, device, test_loader)
+  incorrect_examples = incorrect['images']
+  incorrect_pred = incorrect['Pred']
+  incorrect_target = incorrect['target']
 
-  # for i in range(25):
-  #   plt.subplot(5,5,i+1)
-  #   plt.tight_layout(pad=0, w_pad=0, h_pad=0.4)
-  #   plt.imshow(incorrect_examples[i].cpu().numpy().squeeze(), cmap='gray', interpolation='none')
-  #     plt.title(f"Predicted:{incorrect_pred[i]} \n Target:{incorrect_target[i]}",color='red',fontsize=6)
-  #   plt.axis('off')
+  inv_normalize = transforms.Normalize(
+    mean=[-0.4890062/0.264582, -0.47970363/0.258996, -0.47680542/0.25643882],
+    std=[1/0.264582, 1/0.258996, 1/0.25643882]
+  )
+
+
+  fig = plt.figure(figsize=(20,10))
+
+  for i in range(25):
+    plt.subplot(5,5,i+1)
+    #plt.tight_layout(pad=0, w_pad=0, h_pad=0.4)
+    #incorrect_examples_inv = inv_normalize(incorrect_examples[i])
+
+    incorrect_examples_temp = inv_normalize(incorrect_examples[i])
+    incorrect_examples_temp = incorrect_examples_temp.cpu().numpy()
+
+    plt.imshow((np.transpose(incorrect_examples_temp, (1, 2, 0)).squeeze() *255).astype(np.uint8))
+    plt.title(f"Predicted:{classes[incorrect_pred[i]]} \n Target:{classes[incorrect_target[i]]}",color='red',fontsize=16)
+    plt.axis('off')
+    plt.tight_layout()
+
+  if savefig:
+    plt.savefig(save_dir+'incorrect_images.jpg', dpi=300, bbox_inches='tight')
+
+  plt.show()
+  
+  
+def plot_performace(train_acc,test_acc,train_losses,test_losses):
+
+    fig, axs = plt.subplots(2,2,figsize=(15,10))
+    axs[0, 0].plot(train_losses)
+    axs[0, 0].set_title("Training Loss",color='red')
+    axs[1, 0].plot(train_acc[4000:])
+    axs[1, 0].set_title("Training Accuracy",color='red')
+    axs[0, 1].plot(test_losses)
+    axs[0, 1].set_title("Test Loss",color='red')
+    axs[1, 1].plot(test_acc)
+    axs[1, 1].set_title("Test Accuracy",color='red')
+    plt.tight_layout()
+    plt.show()
     
+    
+def class_accuracy(num_class,model,test_loader,device):
+  class_correct = list(0. for i in range(num_class))
+  class_total = list(0. for i in range(num_class))
+  with torch.no_grad():
+    for data in test_loader:
+      images, labels = data
+      images, labels = images.to(device), labels.to(device) 
+      outputs = model(images)
+      _, predicted = torch.max(outputs, 1)
+      c = (predicted == labels).squeeze()
+      for i in range(4):
+        label = labels[i]
+        class_correct[label] += c[i].item()
+        class_total[label] += 1
+  
+  for i in range(10):
+    print('Accuracy of %5s : %2d %%' % (
+            classes[i], 100 * class_correct[i] / class_total[i]))
  
-  # plt.savefig('/content/drive/My Drive/models/incorrect_images.jpg', dpi=300, bbox_inches='tight')
-  # plt.show()
