@@ -140,7 +140,7 @@ def show_cam_on_image(img, mask):
     # plt.show()
     return superimposed_img
 
-def plot_grad_cam(model,classes,train_loader,device,savefig,save_dir):
+def plot_grad_cam(model,classes,train_loader,device,*savefig,*save_dir):
 
   """
   Generate Grad-CAM at different layers of model
