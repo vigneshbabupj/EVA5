@@ -35,8 +35,8 @@ ResNet18
 
 # Result:
 * Parameters: 11,173,962
-* Train Accuracy - 96.684% (100th epoch)
-* Test Accuracy - 88.6% (100th epoch)
+* Train Accuracy - 98.2% (50th epoch)
+* Test Accuracy - 88.7% (50th epoch)
 
 # Model Performance
 
