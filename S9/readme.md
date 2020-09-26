@@ -40,24 +40,30 @@ ResNet18
 
 # Model Performance
 
+![image](https://user-images.githubusercontent.com/48342398/94346183-8e4d2d80-0048-11eb-9853-df5c819742dc.png)
+
 
 #GradCam Results
 Gradcam results at 4 layers for random 5 images:
+
+![image](https://user-images.githubusercontent.com/48342398/94346201-a8870b80-0048-11eb-848e-ef1bc9289aab.png)
 
 
 #InCorrect Classifications
 Sample images which are incorreclty classified:
 
+![image](https://user-images.githubusercontent.com/48342398/94346323-7de98280-0049-11eb-90bc-0575ddf600af.png)
 
 
 # Class wise accuracy
+
 * Accuracy of plane : 94 %
-* Accuracy of   car : 89 %
-* Accuracy of  bird : 95 %
-* Accuracy of   cat : 90 %
-* Accuracy of  deer : 96 %
-* Accuracy of   dog : 76 %
-* Accuracy of  frog : 91 %
-* Accuracy of horse : 95 %
+* Accuracy of   car : 95 %
+* Accuracy of  bird : 75 %
+* Accuracy of   cat : 83 %
+* Accuracy of  deer : 97 %
+* Accuracy of   dog : 86 %
+* Accuracy of  frog : 93 %
+* Accuracy of horse : 90 %
 * Accuracy of  ship : 100 %
-* Accuracy of truck : 100 %
+* Accuracy of truck : 97 %
