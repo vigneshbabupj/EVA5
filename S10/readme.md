@@ -51,7 +51,7 @@ ResNet18
 
 
 
-#GradCam Results 25 misclassified images
+# GradCam Results 25 misclassified images
 
 
 ![image](https://user-images.githubusercontent.com/48342398/94986066-31d29c80-0579-11eb-8495-44e74343935c.png)
