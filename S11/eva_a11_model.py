@@ -95,9 +95,3 @@ class Assign_11_model(nn.Module):
           x = self.FC(x)
           
           return F.log_softmax(x, dim=-1)
-
-from torchsummary import summary
-
-model = Assign_11_model()
-
-summary(model, input_size=(3, 32, 32))
