@@ -41,7 +41,7 @@ Change the given network as per the below instructions
 
 ## Lr change curve
 
-![image](https://user-images.githubusercontent.com/48342398/95652062-14b74400-0b0c-11eb-8379-5b4b0306abc8.png)
+![image](https://user-images.githubusercontent.com/48342398/95652421-6fea3600-0b0e-11eb-938f-989190052082.png)
 
 
 
