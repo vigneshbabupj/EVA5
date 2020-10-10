@@ -31,6 +31,8 @@ plt.axhline(Min_lr,label = 'LR min',color='r')
 plt.axhline(Max_lr,label = 'LR max',color='r')
 plt.plot(lr_list,label = 'LR')
 plt.legend()
+plt.xlabel("Iterations")
+plt.ylabel("Learning Rate")
 plt.ylim((1,15))
 plt.show()
 
