@@ -1,0 +1,37 @@
+    "1.jpg96465": {                             --. Key name of the anotations of the images
+        "filename": "1.jpg",                    --> Name of the images file            
+        "size": 96465,                          --> Total size of the image
+        "regions": [                            --> region block contains all the bounding boxes in the image as a list
+            {                                   --> '{' marks the start of First region / Bounding box
+                "shape_attributes": {           --> shape_attributes are the varibles that define the bounding box
+                    "name": "rect",             --> Shape of the bounding box ( here it is rectangle)
+                    "x": 166,                   --> x,y together mark the point of the bounding box, it is the left bottom vertex of the rectangle
+                    "y": 13,
+                    "width": 181,               --> width of the bounding box starting from the x,y point
+                    "height": 162               --> height of the bounding box starting from the x,y point
+                },                              --> (x,y) & width and height together help is identify to draw the box in the image
+                "region_attributes": {          --> This section give the attributes related to the region
+                    "class_name": "hardhat"     --> The Class name for the first bounding box is "hardhat"
+                }
+            },                                  --> Here '}' marks the closing of the first bounding box
+            {                                   --> The details of seconding box and its attributes start from here 
+                "shape_attributes": {           --> The shape attributes of the second bounding box similar to what explain for the first
+                    "name": "rect",
+                    "x": 282,
+                    "y": 106,
+                    "width": 470,
+                    "height": 413
+                },
+                "region_attributes": {          ==> The region of the second bounding box
+                    "class_name": "vest"        --> The class of the second box is 'vest'
+                }
+            }
+        ],
+        "file_attributes": {                    --> attributes at the file level would be contained in this section
+            "caption": "",                      --> Caption of the image if any
+            "public_domain": "no",              --> flag to indicate if the image is in the public domain or local
+            "image_url": ""                     --> 'url' of the image if applicable
+        }
+    },
+
+### All images follow the same structure to hold the details of different bounding boxes details to draw and identify the class name
