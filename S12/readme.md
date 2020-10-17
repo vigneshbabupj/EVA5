@@ -21,7 +21,7 @@
 
 ## Assingment A
 
-Final file: https://github.com/vigneshbabupj/EVA5/blob/master/S12/S12_Assignment_B/EVA_A12_A_Final.ipynb
+Final file: https://github.com/vigneshbabupj/EVA5/blob/master/S12/S12_Assignment_A/EVA_A12_A_Final.ipynb
  
 ### Model Summary
 
