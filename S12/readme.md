@@ -1,4 +1,4 @@
-# EVA - Assignment 12
+# EVA - Assignment 12 - ResNet18 model on Tiny Imagenet dataset
 
 
 ## Problem Statement
@@ -21,38 +21,43 @@
 
 ## Assingment A
 
-Final file: 
+Final file: https://github.com/vigneshbabupj/EVA5/blob/master/S12/S12_Assignment_B/EVA_A12_A_Final.ipynb
  
 ### Model Summary
+
+ResNet18 Model:
+
+![image](https://user-images.githubusercontent.com/48342398/96336670-071b3480-109f-11eb-9afb-1ca6777bbdc1.png)
 
 
 ### Lr Range Test
 
+![image](https://user-images.githubusercontent.com/48342398/96336689-23b76c80-109f-11eb-9af5-3cca655e690d.png)
 
 
 ### Model Hyperparamters
 * Batch size - 256
 * Epochs - 50
 * optimizer - Stochastic Gradient decent
-	* Max Lr : 0.03
-	* Min Lr : 0.003
+	* Max Lr : 0.05
+	* Min Lr : 0.005
 * Loss function - CrossEntropyLoss
 
 ### Lr Change during training
+
+![image](https://user-images.githubusercontent.com/48342398/96336706-55c8ce80-109f-11eb-85d9-a9f61ebce63f.png)
 
 
 
 ### Result:
 * Parameters: 11,271,432
-* Train Accuracy - 96.108% (24th epoch)
-* Test Accuracy - 90.06% (24th epoch)
+* Train Accuracy - 99.43% (50th epoch)
+* Test Accuracy - 61.62% (50th epoch)
 
 ### Model Performance
 
+![image](https://user-images.githubusercontent.com/48342398/96336864-18187580-10a0-11eb-9957-bcdad93c50a0.png)
 
-
-### InCorrect Classifications
-Sample images which are incorreclty classified:
 
 
 ##  Assingment B
