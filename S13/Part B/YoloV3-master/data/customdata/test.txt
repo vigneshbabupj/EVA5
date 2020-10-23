@@ -240,7 +240,6 @@
 ./data/customdata/images/ImageYolo (33).jpg
 ./data/customdata/images/ImageYolo (53).jpg
 ./data/customdata/images/ImageYolo (65).jpg
-./data/customdata/images/ImageYolo.jpg
 ./data/customdata/images/LImage_010.jpg
 ./data/customdata/images/LImage_020.jpg
 ./data/customdata/images/LImage_030.jpg
