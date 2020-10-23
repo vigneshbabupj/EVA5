@@ -1,4 +1,4 @@
-classes=1
-train=data/customdata/custom.txt
-valid=data/customdata/custom.txt
+classes=4
+train=data/customdata/train.txt
+valid=data/customdata/test.txt
 names=data/customdata/custom.names
