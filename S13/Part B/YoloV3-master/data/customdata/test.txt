@@ -252,7 +252,7 @@
 ./data/customdata/images/LImage_100.jpg
 ./data/customdata/images/LImage_110.jpg
 ./data/customdata/images/LImage_120.jpg
-./data/customdata/images/M/img_010.jpg
+./data/customdata/images/Mimg_010.jpg
 ./data/customdata/images/Mimg_020.jpg
 ./data/customdata/images/Mimg_030.jpg
 ./data/customdata/images/Mimg_040.jpg

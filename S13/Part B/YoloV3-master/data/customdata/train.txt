@@ -229,7 +229,7 @@
 ./data/customdata/images/Aimg_071.txt
 ./data/customdata/images/Aimg_008.txt
 ./data/customdata/images/Aimg_066.txt
-./data/customdata/images/./data/customdata/images/Aimg_023.txt
+./data/customdata/images/Aimg_023.txt
 ./data/customdata/images/Aimg_049.txt
 ./data/customdata/images/Aimg_068.txt
 ./data/customdata/images/Aimg_056.txt
