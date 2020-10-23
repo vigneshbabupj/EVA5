@@ -1,4 +1,4 @@
 classes=4
-train=YoloV3_Dataset/train.txt
-valid=YoloV3_Dataset/test.txt
-names=YoloV3_Dataset/classes
+train=data/YoloV3_Dataset/train.txt
+valid=data/YoloV3_Dataset/test.txt
+names=data/YoloV3_Dataset/custom.names
