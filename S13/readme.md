@@ -29,9 +29,8 @@
 
 Notebook: https://github.com/vigneshbabupj/EVA5/blob/master/S13/Part%20A/EVA_S13_A_openCv_Yolo_COCO.ipynb
 
-Image :
-
- ![My_Image](https://github.com/vigneshbabupj/EVA5/blob/master/S13/images/My_Image.jpg)
+Image
+![My_Image](https://github.com/vigneshbabupj/EVA5/blob/master/S13/images/me.jpg)
 
 
 ##  Training Yolov3 on Custom Dataset
