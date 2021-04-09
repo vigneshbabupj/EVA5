@@ -1,0 +1,43 @@
+﻿## EVA5 - Assignment 1
+
+
+What are Channels and Kernels (according to EVA)?
+	Channels: A channel is a bag of similar features
+	kernels: A kernel is a filter that is used to extract only the features which it is interested in from the input layer/image. 
+	For Eg: For Eg: In an image classification problem to identify if Dog exists in the image, one of the features could be the dog's eye which the models look at, so it forms a container consisting only of all eyes in the image which is a Channel and the filter using which only the eye is extracted from the image is called a kernel. Similarly, there could be other channels for other features like the ear, legs, nose, etc each having their own kernel or feature extractor.
+
+	The image below shows the color based channels, different channels for Red, Green, and Blue with its corresponding kernels : 
+	https://pylessons.com/static/images/CNN-tutorials/CNN-tutorial-introduction/Figure_7.gif 
+
+Why should we (nearly) always use 3x3 kernels? 
+A Kernel size of 3x3 seems to bring the perfect balance between capturing small features and computation, 
+A higher kernel ( 5x5 or higher) would possibly lead to two problems:
+	It might not extract all the low-level features and could skip/overlook a few key features of the image
+	It increases the computation cost with high no of parameters, a 5x5 convolution will have the same receptive field as 2 layers of 3x3 convolution, but 5x5 Conv will have higher parameters than 2 layers of 3x3.
+A  lower kernel is not considered due to the below:
+	a 1x1 size would mean each pixel contains features and does not account of features that extends to the nearby pixels, 1x1 is used only in cases of reducing the dimensions 
+	a 2x2 size kernel is not suitable as even sized kernels leads to distortions in the output, an odd size kernel would have a centered output pixel with all neighboring pixel around it, but in the even-sized kernel, this symmetry is not possible. 
+
+How many times to we need to perform 3x3 convolutions operations to reach close to 1x1 from 199x199 (type each layer output like 199x199 > 197x197...)
+100 times
+199x199 > 197x197 > 195x195 > 193x193 > 191x191 > 189x189 > 187x187 > 185x185 > 183x183 > 181x181 > 179x179 > 177x177 > 175x175 > 173x173 > 171x171 > 169x69 >
+167x167 > 165x165 > 163x163 > 161x161 > 159x159 > 157x157 > 155x155 > 153x153 > 151x151 > 149x149 > 147x147 > 145x145 > 143x143 > 141x141 > 139x139 > 137x137 >
+135x135 > 133x133 > 131x131 > 129x129 > 127x127 > 125x125 > 123x123 > 121x121 > 119x119 > 117x177 > 115x115 > 113x113 > 111x111 > 109x109 > 107x107 > 105x105 >
+103x103 > 101x101 > 99x99 > 97x97 > 95x95 > 93x93 > 91x91 > 89x89 > 87x87 > 85x85 > 83x83 > 81x81 > 79x79 > 77x77 > 75x75 > 73x73 > 71x71 > 69x69 > 67x67 >
+65x65 > 63x63 > 61x61 > 59x59 > 57x57 > 55x55 > 53x53 > 51x51 > 49x49 > 47x47 > 45x45 > 43x43 > 41x41 > 39x39 > 37x37 > 35x35 > 33x33 > 31x31 > 29x29 >
+27x27 > 25x25 > 23x23 > 21x21 > 19x19 > 17x17 > 15x15 > 13x13 > 11x11 >  9x9 > 7x7 > 5x5 > 3x3 > 1x1
+
+How are kernels initialized? 
+	Kernels are randomly initialized and their weights are updated by Backpropagation. Additionally, there are also few ways available by which the weights can be initialized such as Glorot uniform, Lecun uniform, all zeros or all ones, etc.
+
+What happens during the training of a DNN?
+
+	A DNN training starts with a randomly intialised weights across the network,
+	at each forward pass the network determines loss by comparing its output and compares with the actual, the feedback is backpropagated into the network based on which the weights are adjusted.
+	This process is continued iteratively until the loss can no longer be minimized.The training stops after a give no of iterations or epochs.
+	
+	An architecture of a DNN is defined so that it can detect the key features that will determine the output, so the sequential layers/blocks of a DNN would be edges and gradients, textures and patterns, parts of object and then the object.
+	During training the kernel weights are adjusted so that it can reach to a point where it extractes the features of the each layer/block correctly as much as possible.
+	
+	The image below shows one iteration of network training:
+image : https://machinelearningknowledge.ai/wp-content/uploads/2019/10/Backpropagation.gif 
